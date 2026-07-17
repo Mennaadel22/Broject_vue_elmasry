@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- الناف بار بلون فاتح متدرج وأنيق --- */
+.navbar {
+    /* تدرج ناعم بين الوردي الخفيف والبيج العاجي */
+    background: linear-gradient(135deg, #fff0f5, #f7e5e9); 
+    box-shadow: 0 4px 12px rgba(99, 44, 68, 0.05); /* ظل خفيف جداً يناسب اللون الفاتح */
+    padding: 15px 0;
+}
+
+/* اسم المتجر (اللوجو) باللون الداكن الفخم ليظهر بوضوح */
+.navbar-brand {
+    color: #632c44 !important; 
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* أزرار الأقسام بلون داكن يتناسب مع الخلفية الفاتحة */
+.navbar .btn-outline-dark {
+    border-color: rgba(99, 44, 68, 0.3) !important;
+    color: #632c44 !important; /* نصوص الأزرار باللون الوردي الداكن */
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* تأثير الـ Hover عند تمرير الماوس فوق الأزرار الفاتحة */
+.navbar .btn-outline-dark:hover {
+    background-color: #632c44 !important; /* يتحول الزر للون الداكن عند الوقوف عليه */
+    color: #ffffff !important; /* تتحول الكتابة للأبيض لتباين ممتاز */
+    border-color: #632c44 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(99, 44, 68, 0.15);
+}
+
+/* زر عربة التسوق الداكن والمميز */
+.navbar .btn-outline-dark:has(.bi-cart3) {
+    background-color: rgba(99, 44, 68, 0.08);
+    border-color: #632c44 !important;
+}
+/* --- تصميم كروت المنتجات متناسق مع ألوان الناف بار الفاتح --- */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    /* ظل ناعم جداً مائل للوردي ليناسب هوية الموقع */
+    box-shadow: 0 8px 24px rgba(99, 44, 68, 0.04); 
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+}
+
+/* تأثير الـ Hover عند تمرير الماوس فوق الكارت */
+.card:hover {
+    transform: translateY(-10px);
+    /* الظل يصبح أعمق عند الارتفاع */
+    box-shadow: 0 15px 30px rgba(99, 44, 68, 0.1); 
+}
+
+/* حركة الصورة الناعمة */
+.card .card-img-top {
+    transition: transform 0.5s ease;
+    object-fit: cover;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.06);
+}
+
+/* تعديل لون عناوين المنتجات ليتطابق مع لوجو الناف بار */
+.card .card-title {
+    color: #632c44 !important; 
+    font-weight: 600;
+}
+
+/* تعديل السعر والعدد ليأخذا نفس اللون الوردي الداكن الفخم */
+.card .text-danger {
+    color: #632c44 !important; 
+}
+
+/* زر "Add to cart" المتناسق تماماً */
+.card .btn-primary {
+    background-color: #632c44; /* نفس اللون الأساسي للناف بار */
+    border-color: #632c44;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* تأثير الـ Hover على زر الشراء */
+.card .btn-primary:hover:not(:disabled) {
+    background-color: #f7e5e9; /* يتحول للون الفاتح المتدرج الخاص بالناف بار */
+    border-color: #632c44;
+    color: #632c44; /* قلب لون النص للوردي الداكن */
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(99, 44, 68, 0.15);
+}
+
+/* شكل الزر عندما يكون المنتج غير متاح (Count = 0) */
+.card .btn-primary:disabled {
+    background-color: #bdadb4;
+    border-color: #bdadb4;
+    color: #ffffff;
+}
