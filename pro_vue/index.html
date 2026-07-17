@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <title>المصري فون</title>
+</head>
+<body>
+    <div id="App">
+        <!-- start nav -->
+        <nav class="navbar navbar-expand-lg bg-white sticky-top py-3">
+            <div class="container">
+                <a class="navbar-brand text-dark fs-3 fw-bold d-flex align-items-center" href="#">
+                    <i class="bi bi-phone-fill text-warning me-2"></i> المصري فون
+                </a>
+                
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto text-center my-3 my-lg-0">
+                        <li class="nav-item mx-1">
+                            <button @click="changeCategory('smartphones')" 
+                                    :class="['nav-link', 'nav-link-btn', currentCategory === 'smartphones' ? 'active' : 'text-secondary']" 
+                                    class="px-3 py-2">الهواتف الذكية</button>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <button @click="changeCategory('smartwatches')" 
+                                    :class="['nav-link', 'nav-link-btn', currentCategory === 'smartwatches' ? 'active' : 'text-secondary']" 
+                                    class="px-3 py-2">الساعات الذكية</button>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <button @click="changeCategory('audio')" 
+                                    :class="['nav-link', 'nav-link-btn', currentCategory === 'audio' ? 'active' : 'text-secondary']" 
+                                    class="px-3 py-2">سماعات الصوت</button>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <button @click="changeCategory('accessories')" 
+                                    :class="['nav-link', 'nav-link-btn', currentCategory === 'accessories' ? 'active' : 'text-secondary']" 
+                                    class="px-3 py-2">الشواحن</button>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <button @click="changeCategory('gadgets')" 
+                                    :class="['nav-link', 'nav-link-btn', currentCategory === 'gadgets' ? 'active' : 'text-secondary']" 
+                                    class="px-3 py-2">ملحقات التصوير</button>
+                        </li>
+                    </ul>
+                    <div class="d-flex justify-content-center">
+                        <button @click="path = 'cart'" class="btn btn-outline-dark position-relative px-4 py-2 d-flex align-items-center rounded-pill">
+                            <i class="bi bi-cart3 fs-5 me-2"></i>
+                            <span>عربة التسوق</span>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {{ cart.length }}
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- end nav -->
+
+
+        <!-- ----------------------------------------------------------------------------------------- -->
+
+        <!-- start products  -->
+        <div v-if="path === 'products'" class="container my-3">
+            <div class="row g-4">
+        
+                <div v-for="pro in filteredProducts" :key="pro.id" class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100 shadow-sm">
+                        <img :src="pro.image" class="card-img-top object-fit-cover" style="height: 200px;" alt="صورة المنتج">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fs-6 fw-bold text-dark mb-2">{{ pro.title }}</h5>
+                            <p class="card-text text-secondary small overflow-y-auto mb-3" style="height: 80px;">
+                                {{ pro.description }}
+                            </p>
+                            <div class="mt-auto">
+                                <div class="fw-bold my-2 text-danger">السعر: {{ pro.price }} ج.م</div>
+                                <div class="fw-bold my-2 text-danger">العدد: {{ pro.count }} </div>
+                                <button class="btn btn-warning w-100 rounded-pill mt-2 " @click="addToCart(pro)" :disabled="pro.count == 0">
+                                    <i class="bi bi-cart-plus me-1"></i> إضافة إلى السلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        <!-- end products  -->
+        
+
+        <!-- ----------------------------------------------------------------------------------------- -->
+
+        <!-- start cart -->
+        <div v-else class="container my-3">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">اسم المنتج</th>
+                        <th scope="col">الصورة</th>
+                        <th scope="col">سعر المنتج</th>
+                        <th scope="col">عدد المنتجات</th>
+                        <th scope="col">المجموع</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in cart" :key="item.id">
+                        <th scope="row">{{ item.title }}</th>
+                        <td><img :src="item.pro.image" style="height: 150px; width: 200px;"></td>
+                        <td>{{ item.pro.price }} ج.م</td>
+                        <td>{{ item.count }}</td>
+                        <td>{{ item.pro.price * item.count }} ج.م</td>
+                    </tr>
+                </tbody>
+                <tfoot v-if="cart.length > 0">
+                    <tr class="table-warning fw-bold fs-5">
+                        <td colspan="4" class="text-start">إجمالي الحساب للطلب بالكامل:</td>
+                        <td class="text-danger">{{ cartTotal }} ج.م</td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <div v-if="cart.length === 0" class="text-center py-5 text-secondary">
+                <i class="bi bi-cart-x fs-1 d-block mb-2"></i>
+                عربة التسوق فارغة حالياً
+            </div>
+        </div>
+        <footer v-if="path !== 'cart'" class="text-white pt-5 pb-4" dir="rtl" style="background-color: #ffffff;">
+            <div class="container text-dark text-md-end">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <h5 class="mb-3">📱 المصري فون</h5>
+                        <p class="opacity-75">متجر متكامل لبيع أحدث الهواتف الذكية، الساعات الذكية، ومعدات تصوير الموبايل الاحترافية، بالإضافة لمركز صيانة معتمد تحت إشراف فنيين متخصصين.</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5 class="mb-3">تواصل معنا</h5>
+                        <p class="opacity-75"><i class="bi bi-telephone-fill ms-2"></i> 0100 000 0000</p>
+                        <p class="opacity-75"><i class="bi bi-geo-alt-fill ms-2"></i> El Mahalla El Kubra, Egypt</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5 class="mb-3">🛠️ خدمات الدعم</h5>
+                        <p class="opacity-75">شرفنا بزيارة فرعنا لفحص جهازك مجاناً والحصول على كشف صيانة فوري للأعطال مع قطع غيار أصلية بضمان حقيقي.</p>
+                    </div>
+                </div>
+                <hr class="border-light opacity-25">
+                <div class="text-center">
+                    <p class="mb-0 opacity-75">© 2026 جميع الحقوق محفوظة - المصري فون</p>
+                </div>
+            </div>
+        </footer>
+    
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
