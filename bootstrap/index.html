@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>المصري فون</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" dir="rtl">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="fa-solid fa-mobile"></i>
+                <span>المصري فون</span>
+            </a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#maintenance-section">مركز الصيانة</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">الأقسام</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#smartphones">الهواتف الذكية</a></li>
+                            <li><a class="dropdown-item" href="#smartwatches">الساعات الذكية</a></li>
+                            <li><a class="dropdown-item" href="#audio">سماعات الصوت والـ Airpods</a></li>
+                            <li><a class="dropdown-item" href="#accessories">الشواحن والملحقات الأساسية</a></li>
+                            <li><a class="dropdown-item" href="#gadgets">معدات الترفيه والتصوير</a></li>
+                        </ul>
+                    </li>
+                </ul>
+    
+                <form class="d-flex">
+                    <input class="form-control ms-2" type="search" placeholder="ابحث عن منتج">
+                    <button class="btn btn-primary" type="button">بحث</button>
+                </form>
+
+                <div id="openCartBtn" class="ms-3 text-white d-flex align-items-center gap-1" style="cursor: pointer;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Cart: <span id="cartCount">0</span></span>
+                </div> 
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/photo1.avif">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/photo2.webp" class="d-block w-100" alt="شحن آمن وحماية قوية" style="max-height: 400px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="smartphones" class="container mt-5" dir="rtl">
+        <h3 class="mb-4 text-end px-2">📱 قسم الهواتف والأجهزة الذكية</h3>
+        <div class="products-grid">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="phone_redmi.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">هاتف ريدمي اقتصادي</h5>
+                    <p class="card-text">ذاكرة 128 جيجا - رام 6 جيجا</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">6200</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="phone_samsung.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">هاتف سامسونج جالاكسي</h5>
+                    <p class="card-text">شاشة سريعة 120Hz - كاميرا ممتازة</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">8500</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1601972599720-36938d4ecd31?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="phone_realme.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">هاتف ريلمي المميز</h5>
+                    <p class="card-text">شحن فائق السرعة 67 واط - بطارية ضخمة</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">7900</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="phone_iphone.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">آيفون كسر زيرو</h5>
+                    <p class="card-text">حالة ممتازة 99% - بطارية أصلية</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">24500</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1565630916779-e303be97b6f5?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="phone_oppo.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">هاتف أوبو الذكي</h5>
+                    <p class="card-text">كاميرا سيلفي احترافية - تصميم نحيف</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">6900</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="phone_infinix.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">هاتف إنفينيكس برو</h5>
+                    <p class="card-text">أداء جبار للألعاب - شاشة كبيرة</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">5400</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="smartwatches" class="container mt-5" dir="rtl">
+        <h3 class="mb-4 text-end px-2">⌚ قسم الساعات والسمارت باند</h3>
+        <div class="products-grid">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="watch_ultra.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">ساعة سمارت Ultra</h5>
+                    <p class="card-text">شاشة كاملة - تدعم مكالمات البلوتوث</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">1250</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="watch_xiaomi.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">ساعة شاومي باند</h5>
+                    <p class="card-text">حساب نبضات القلب والخطوات والرياضة</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">1890</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="watch_oraimo.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">ساعة اورايمو الذكية</h5>
+                    <p class="card-text">مقاومة للماء بالكامل - بطارية تدوم طويلًا</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">1650</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="watch_hk.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">ساعة HK المودرن</h5>
+                    <p class="card-text">شاشة أموليد فائقة الوضوح - استايل كلاسيك</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">2100</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="watch_fitbit.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">ساعة فيتبيت الرياضية</h5>
+                    <p class="card-text">تتبع متقدم للنوم والتمارين والأنشطة</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">3400</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1617625884240-16ff34fa5880?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="watch_huawei.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">ساعة هواوي GT</h5>
+                    <p class="card-text">تصميم فخم بهيكل معدني جذاب جداً</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">4800</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="audio" class="container mt-5" dir="rtl">
+        <h3 class="mb-4 text-end px-2">🎧 قسم سماعات الصوت والـ Airpods</h3>
+        <div class="products-grid">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1588449668365-d15e397f6787?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="audio_airpods.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">سماعة ايربودز برو</h5>
+                    <p class="card-text">عزل ضوضاء فائق - صوت نقي ومحيطي</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">950</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="audio_oraimo_earbuds.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">سماعة اورايمو اللاسلكية</h5>
+                    <p class="card-text">بطارية جبارة تدوم حتى 40 ساعة تشغيل</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">750</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="audio_headphone.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">سماعة رأس بلوتوث P47</h5>
+                    <p class="card-text">صوت بيز قوي ومريحة جداً للأذن</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">320</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1608248597481-496100c80836?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="audio_anker.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">سماعة أنكر ساوند كور</h5>
+                    <p class="card-text">جودة اتصال فائقة مع ميكروفون نقي</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">1400</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="audio_gaming.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">سماعة ألعاب محيطية</h5>
+                    <p class="card-text">إضاءة RGB جذابة وبدون أي تأخير في الصوت</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">650</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="audio_speaker.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">صب بلوتوث سبيكر متحرك</h5>
+                    <p class="card-text">صوت مجسم ونقي ومقاوم لرذاذ الماء</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">480</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accessories" class="container mt-5" dir="rtl">
+        <h3 class="mb-4 text-end px-2">⚡ قسم الشواحن والملحقات الأساسية</h3>
+        <div class="products-grid">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1622445262465-2481c4574875?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="acc_charger_head.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">رأس شاحن سريع 20 واط</h5>
+                    <p class="card-text">يدعم الشحن السريع PD وآمن على البطارية</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">350</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1541667595797-e3cdb27e894c?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="acc_cable.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">وصلة شحن قماش ضد القطع</h5>
+                    <p class="card-text">متوفرة لـ Type-C و iPhone تدعم نقل البيانات</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">120</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1609592424109-dd9892f1b17c?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="acc_powerbank.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">باور بانك 20,000 مللي أمبير</h5>
+                    <p class="card-text">يشحن جهازك 4 مرات متتالية مع شاشة رقمية</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">890</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="acc_wireless.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">قاعدة شحن لاسلكي ذكي</h5>
+                    <p class="card-text">متوافق مع جميع الهواتف والساعات الذكية</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">550</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1619717148560-61b689bd4851?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="acc_stand.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">ستاند مكتب هيدروليك معدني</h5>
+                    <p class="card-text">قوي وثابت ومناسب للموبايل والتابلت</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">180</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="acc_car_charger.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">شاحن سيارة سريع ومزدوج</h5>
+                    <p class="card-text">منفذين بقوة إجمالية 36 واط لحماية الأجهزة</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">260</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gadgets" class="container mt-5" dir="rtl">
+        <h3 class="mb-4 text-end px-2">🎥 معدات ترفيهية وملحقات تصوير</h3>
+        <div class="products-grid">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1626244465551-7f3083cfc5c5?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="gadget_ringlight.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">رينج لايت احترافي 26سم</h5>
+                    <p class="card-text">مع ستاند طويل 2 متر لـ صناع المحتوى</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">450</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1590608897129-79da98d15969?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="gadget_mic.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">مايك لاسلكي للموبايل K9</h5>
+                    <p class="card-text">مايك مزدوج لتسجيل الفيديو وعزل الضوضاء</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">350</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="gadget_tripod.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">ستاند تصوير ثلاثي مرن</h5>
+                    <p class="card-text">حامل موبايل وريموت بلوتوث للتحكم عن بعد</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">280</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1584438784894-089d6a128f3e?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="gadget_gimbal.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">مانع اهتزاز (Gimbal)</h5>
+                    <p class="card-text">لتصوير فيديوهات سينمائية ناعمة وثابتة</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">3200</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1612444530582-fc66183b16f7?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="gadget_boxlight.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">علبة إضاءة ستوديو صغيرة</h5>
+                    <p class="card-text">لتصوير المنتجات بدقة وإضاءة ممتازة</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">850</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1600541519463-fde0c24a32d5?q=80&w=400&auto=format&fit=crop" class="card-img-top" alt="gadget_holder.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">حامل موبايل مغناطيسي للسيارة</h5>
+                    <p class="card-text">يثبت في فتحات التكييف بقوة وثبات عالي</p>
+                    <p class="fw-bold text-success mb-2">السعر: <span class="product-price">190</span> جنيه</p>
+                    <button class="btn btn-primary add-to-cart-btn">إضافة للسلة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="maintenance-section" class="container mt-5 mb-5" dir="rtl">
+        <div class="p-4 text-center rounded shadow-sm" style="background: linear-gradient(135deg, #1e3c72, #2a5298); color: white;">
+            <div class="mb-2">
+                <i class="fa-solid fa-screwdriver-wrench fs-1 text-warning mb-3"></i>
+            </div>
+            <h3 class="fw-bold">🛠️ مركز الصيانة المعتمد لـ "المصري فون"</h3>
+            <p class="fs-5 max-width-700 mx-auto opacity-90 mt-2">
+                بجانب البيع، يسعدنا استقبالكم في فرعنا لتقديم أسرع خدمة صيانة فورية لشاشات الموبايل، تغيير البطاريات، وإصلاح أعطال البوردة والسوفت وير بأحدث الأجهزة الفنية.
+            </p>
+            <div class="mt-3">
+                <span class="badge bg-warning text-dark fs-6 px-3 py-2 m-1"><i class="fa-solid fa-shield-halved"></i> قطع غيار أصلية بضمان</span>
+                <span class="badge bg-light text-dark fs-6 px-3 py-2 m-1"><i class="fa-solid fa-clock"></i> فحص وتشخيص الأعطال مجاناً داخل المحل</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cartmodal" tabindex="-1" aria-hidden="true" dir="rtl">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa-solid fa-cart-shopping"></i> سلة المشتريات</h5>
+                    <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cartItemsList" class="list-group mb-3">
+                        <li class="list-group-item text-center text-muted">السلة فارغة</li>
+                    </ul>
+                    <div class="text-end fw-bold fs-5 p-2 border-top">
+                        إجمالي الحساب: <span id="cartTotalPrice" class="text-success">0</span> جنيه
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn btn-success" id="checkoutBtn">إتمام الشراء</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true" dir="rtl">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa-solid fa-truck-fast"></i> بيانات الشحن والدفع</h5>
+                    <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="checkoutForm">
+                        <input type="hidden" id="hiddenCartItems" name="cart_items">
+                        <input type="hidden" id="hiddenTotalPrice" name="total_price">
+    
+                        <div class="alert alert-secondary text-end fw-bold" id="checkoutTotalDisplay">
+                            إجمالي المبلغ المطلوب دفعه: 0 جنيه
+                        </div>
+
+                        <div class="mb-3 text-end">
+                            <label for="clientName" class="form-label">الاسم بالكامل <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control text-end" id="clientName" name="client_name" required placeholder="أدخل اسمك الثلاثي">
+                        </div>
+    
+                        <div class="mb-3 text-end">
+                            <label for="clientPhone" class="form-label">رقم الهاتف (واتساب) <span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control text-end" id="clientPhone" name="client_phone" required placeholder="01xxxxxxxxx">
+                        </div>
+    
+                        <div class="mb-3 text-end">
+                            <label for="clientAddress" class="form-label">العنوان بالتفصيل <span class="text-danger">*</span></label>
+                            <textarea class="form-control text-end" id="clientAddress" name="client_address" rows="2" required placeholder="المحافظة - المدينة - اسم الشارع"></textarea>
+                        </div>
+    
+                        <div class="mb-3 text-end">
+                            <label class="form-label fw-bold">طريقة الدفع المفضلة <span class="text-danger">*</span></label>
+                            
+                            <div class="form-check text-end mb-2">
+                                <input class="form-check-input float-end ms-2" type="radio" name="payment_method" id="cod" value="الدفع عند الاستلام" checked>
+                                <label class="form-check-label" for="cod">
+                                    <i class="fa-solid fa-hand-holding-dollar me-1 text-success"></i> الدفع عند الاستلام (COD)
+                                </label>
+                            </div>
+
+                            <div class="form-check text-end mb-2">
+                                <input class="form-check-input float-end ms-2" type="radio" name="payment_method" id="vodafone" value="فودافون كاش">
+                                <label class="form-check-label" for="vodafone">
+                                    <i class="fa-solid fa-wallet me-1 text-danger"></i> محفظة إلكترونية (فودافون كاش / إنستا باي)
+                                </label>
+                            </div>
+
+                            <div class="form-check text-end">
+                                <input class="form-check-input float-end ms-2" type="radio" name="payment_method" id="card" value="الدفع بالبطاقة">
+                                <label class="form-check-label" for="card">
+                                    <i class="fa-solid fa-credit-card me-1 text-primary"></i> بطاقة ائتمان / فيزا وميزة
+                                </label>
+                            </div>
+                        </div>
+    
+                        <div class="modal-footer pb-0 px-0">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                            <button type="submit" class="btn btn-success" id="submitOrderBtn">تأكيد وطلب الأوردر</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-white pt-5 pb-4" dir="rtl" style="background-color: #212529;">
+        <div class="container text-center text-md-end">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="mb-3">📱 المصري فون</h5>
+                    <p class="opacity-75">متجر متكامل لبيع أحدث الهواتف الذكية، الساعات الذكية، ومعدات تصوير الموبايل الاحترافية، بالإضافة لمركز صيانة معتمد تحت إشراف فنيين متخصصين.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="mb-3">تواصل معنا</h5>
+                    <p class="opacity-75"><i class="fa-solid fa-phone ms-2"></i> 0100 000 0000</p>
+                    <p class="opacity-75"><i class="fa-solid fa-location-dot ms-2"></i> El Mahalla El Kubra, Egypt</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="mb-3">🛠️ خدمات الدعم</h5>
+                    <p class="opacity-75">شرفنا بزيارة فرعنا لفحص جهازك مجاناً والحصول على كشف صيانة فوري للأعطال مع قطع غيار أصلية بضمان حقيقي.</p>
+                </div>
+            </div>
+            <hr class="border-light opacity-25">
+            <div class="text-center">
+                <p class="mb-0 opacity-75">© 2026 جميع الحقوق محفوظة - المصري فون</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
